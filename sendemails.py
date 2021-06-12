@@ -7,6 +7,7 @@ from email.mime.text import MIMEText
 from credentials import *
 from scraping import li3
 
+# Need to add description, etc
 
 def get_contacts(filename):
     all_names = []
