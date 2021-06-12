@@ -1,0 +1,8 @@
+Hej ${PERSON_NAME}!
+
+A new scan was conducted today, and there is nothing new to report.
+
+Check for yourself: https://bibliotekuppsala.se
+
+Keep on keeping on,
+Danny

@@ -1,0 +1,9 @@
+Hej ${PERSON_NAME}!
+
+New titles have been added to the library:
+
+${TITLE_LIST}
+Make a reservation here: https://bibliotekuppsala.se
+
+Best regards,
+Danny
