@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-# import sys
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
@@ -10,12 +8,10 @@ import shutil
 import os.path
 import argparse
 
-# import caffeine  # For keeping computer awake during process
-
 # INITIATE THE PARSER
 parser = argparse.ArgumentParser()
 parser.add_argument("-D", "--dev", help="Pauses the web driver after scraping each page and provides an option to end "
-                                        "the program prematurely.", action="store_true")
+                                        "the program prematurely.\n", action="store_true")
 parser.add_argument("-T", "--time", help="Set a custom sleep time between pagination, in seconds.", action="store",
                     type=int, required=False)
 parser.add_argument("-L", "--link", help="Provide an alternative link to scrape. The link must be enclosed in double "
@@ -100,7 +96,7 @@ while repeat:
         if indexNextPage == "Y" or indexNextPage == "y":
             continue
         else:
-            print("Indexing ended prematurely after page", current_page)
+            print("Indexing ended prematurely after page", current_page, "\n")
             break
 
 # QUIT DRIVER ON COMPLETION
@@ -128,18 +124,29 @@ latestFile = open("Library_temp.txt", "r")
 li1 = originalFile.read().splitlines()  # Previous version of list
 li2 = latestFile.read().splitlines()  # Current version of list
 li3 = [i for i in li1 + li2 if i not in li1 or i not in li2]  # All changes
-# li4 = Titles added (IN li2 and NOT IN li1)
-# li5 = Titles removed (IN li1 and NOT IN li2)
+removedTitles = [i for i in li1 + li2 if i in li2 and i not in li1] # Titles removed
+newTitles = [i for i in li1 + li2 if i in li1 and i not in li2] # Titles added
 
 # REMOVE TEMP FILE
 os.remove('Library_temp.txt')
 
 # IF DIFFERENT, STATE DIFFERENCE
 if not li3:
-    print("Nothing new found")
+    print("No changes.\n")
 else:
-    print("New titles found:")
-    for title in li3:
-        print(title)
+    if not newTitles:
+        print("No new titles added.\n")
+    else:
+        print("New titles added:")
+        for title in newTitles:
+            print("- " + title)
+        print()
+    if not removedTitles:
+        print("No titles removed.\n")
+    else:
+        print("Titles removed:")
+        for title in removedTitles:
+            print("- " + title)
+        print()
 
 print("Scrape completed!")
