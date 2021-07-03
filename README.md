@@ -9,7 +9,7 @@
 The script outputs the list of titles to a text file named `Library.txt`. It then compares the data with the previous
 version and emails the changes to a list of users specified in the `contacts.txt` file.
 
-*This project uses chromedriver as the web driver, but any other browser (i.e., firefox) will work with some appropriate
+This project uses chromedriver as the web driver, but any other browser (i.e., firefox) will work with some appropriate
 changes in the code. See **1.3** at this link for information about choosing and setting up the web driver:*
 `https://selenium-python.readthedocs.io/installation.html`
 
@@ -28,8 +28,8 @@ changes in the code. See **1.3** at this link for information about choosing and
 - [ ] Doesn't differentiate between removed titles and added titles. User is emailed about a 'new title' even if the
   title in question has actually been removed from the library
 - [x] ~~Web address is hard-coded and should be extrapolated to make the script more flexible~~
-- [ ] Credentials are not stored securely - could be read directly from the *macOS Keychain* instead
-- [ ] Need to research how best to normally add a project to GitHub that uses private credentials
+- [x] Credentials are not stored securely - could be read directly from the *macOS Keychain* instead
+- [x] Need to research how best to normally add a project to GitHub that uses private credentials
 - [x] ~~Need to add a secondary alert email if no new changes at the library were detected~~
 - [x] ~~Time-limit is currently hard-coded as 10 seconds - this could be lowered if you have a fast and stable internet
   connection. Could be provided as an argument in the command line~~
