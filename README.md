@@ -25,7 +25,7 @@ changes in the code. See **1.3** at this link for information about choosing and
 
 ###### Current todos and problems include:
 
-- [ ] Doesn't differentiate between removed titles and added titles. User is emailed about a 'new title' even if the
+- [x] Doesn't differentiate between removed titles and added titles. User is emailed about a 'new title' even if the
   title in question has actually been removed from the library
 - [x] ~~Web address is hard-coded and should be extrapolated to make the script more flexible~~
 - [x] Credentials are not stored securely - could be read directly from the *macOS Keychain* instead
